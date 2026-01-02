@@ -1,0 +1,43 @@
+[
+  {
+    "pipeline_strategy": {
+      "preprocessing": [
+        "remove_special_characters",
+        "convert_to_lowercase",
+        "remove_stopwords",
+        "lemmatization"
+      ],
+      "feature_extraction": "TF-IDF",
+      "model": "RandomForestClassifier",
+      "training_strategy": "StratifiedKFoldCrossValidation",
+      "evaluation_metric": [
+        "accuracy",
+        "f1_score",
+        "precision",
+        "recall"
+      ]
+    },
+    "justification": "Added 'remove_stopwords' and 'lemmatization' to preprocessing to enhance text normalization and improve model performance. Retained 'TF-IDF' for feature extraction as it effectively captures the importance of words in the context of the comments. The 'RandomForestClassifier' remains a robust choice for classification tasks, and 'StratifiedKFoldCrossValidation' ensures that the model is evaluated fairly across different subsets of data."
+  },
+  {
+    "pipeline_strategy": {
+      "preprocessing": [
+        "remove_special_characters",
+        "convert_to_lowercase",
+        "remove_stopwords",
+        "lemmatization",
+        "stemming"
+      ],
+      "feature_extraction": "TF-IDF with n-grams",
+      "model": "XGBoost",
+      "training_strategy": "StratifiedKFoldCrossValidation",
+      "evaluation_metric": [
+        "accuracy",
+        "f1_score",
+        "precision",
+        "recall"
+      ]
+    },
+    "justification": "Added 'stemming' to preprocessing to further normalize text and improve model performance. Updated feature extraction to include n-grams in TF-IDF to capture more context in comments. Switched to 'XGBoost' as it often outperforms RandomForestClassifier in classification tasks. Retained 'StratifiedKFoldCrossValidation' for reliable evaluation. The evaluation metrics remain the same to ensure consistency in performance measurement."
+  }
+]

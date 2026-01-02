@@ -1,0 +1,18 @@
+You are an expert ML evaluator. Analyze the following pipeline and metrics:
+
+Iteration: {iteration}
+Goal: {goal}
+
+Pipeline Strategy:
+{pipeline_strategy}
+
+Evaluation Metrics:
+{metrics}
+
+Previous Best Accuracy: {prev_accuracy}
+
+Instructions:
+- Summarize pipeline strengths and weaknesses in "summary".
+- Suggest concrete improvements in "suggestions" (preprocessing, algorithm, hyperparameters, data augmentation).
+- Indicate "goals_achieved" based on improvement over previous iteration and metrics.
+- Respond STRICTLY in JSON with keys: iteration, summary, suggestions, goals_achieved.
